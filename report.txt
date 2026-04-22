@@ -1,0 +1,91 @@
+# Bus Tracking System - Project Report
+
+## Project Overview
+This is a React-based Bus Tracking System application built using Vite as the build tool. The application allows users to search for buses by their ID and view their current location, driver information, and status on a map.
+
+## Technology Stack
+- **Frontend Framework**: React 19.2.4
+- **Build Tool**: Vite 8.0.0
+- **Linting**: ESLint with React-specific rules
+- **Styling**: CSS (main.css)
+- **Data**: Static JavaScript array (buses.js)
+
+## Project Structure
+```
+bus-tracker/
+├── public/                 # Static assets
+├── src/
+│   ├── components/         # React components
+│   │   ├── App.jsx         # Main application component
+│   │   ├── BusCard.jsx     # Displays bus information
+│   │   ├── BusForm.jsx     # Search form for bus ID
+│   │   ├── MapView.jsx     # Map component for location display
+│   │   └── NavBar.jsx      # Navigation bar
+│   ├── data/
+│   │   └── buses.js        # Static bus data
+│   ├── services/           # (Empty directory)
+│   ├── styles/
+│   │   └── main.css        # Main stylesheet
+│   └── main.jsx            # Application entry point
+├── .vscode/
+│   └── settings.json       # VS Code workspace settings
+├── eslint.config.js        # ESLint configuration
+├── index.html              # HTML template
+├── package.json            # Project dependencies and scripts
+├── vite.config.js          # Vite configuration
+└── README.md               # Project documentation
+```
+
+## Key Features
+1. **Bus Search**: Users can enter a bus ID to search for specific buses
+2. **Bus Information Display**: Shows driver name, current location, and status
+3. **Map Integration**: Displays bus location on a map (likely using a mapping library)
+4. **Responsive UI**: Clean, user-friendly interface with navigation
+
+## Components Description
+- **App.jsx**: Main component managing state and routing between login (temporarily removed) and main UI
+- **BusForm.jsx**: Form component for bus ID input and search submission
+- **BusCard.jsx**: Card component displaying bus details (ID, driver, location, status)
+- **MapView.jsx**: Component for rendering the map with bus location
+- **NavBar.jsx**: Navigation component for the application header
+
+## Data Structure
+The application uses static data stored in `src/data/buses.js`:
+```javascript
+{
+  id: "101",
+  driver: "Rajesh",
+  location: "Hyaat Palace, Vasna-Gotri Road, Vadodara",
+  status: "On Route",
+  coords: { lat: 22.2998866, lng: 73.127984 }
+}
+```
+
+## Scripts Available
+- `npm run dev`: Start development server with hot reload
+- `npm run build`: Build the application for production
+- `npm run lint`: Run ESLint for code quality checks
+- `npm run preview`: Preview the built application
+
+## Current Status
+- Basic bus tracking functionality implemented
+- Login system temporarily removed
+- Static data used (no backend integration yet)
+- Map component exists but implementation details not reviewed
+
+## Future Enhancements
+- Implement real-time bus tracking with backend API
+- Add user authentication and authorization
+- Integrate with actual mapping services (Google Maps, Mapbox)
+- Add more bus details and route information
+- Implement push notifications for bus updates
+- Add offline support and caching
+
+## Development Notes
+- Uses modern React hooks for state management
+- Follows component-based architecture
+- ESLint configured for code quality
+- Vite provides fast development experience with HMR
+
+---
+Report generated on: April 12, 2026
