@@ -1,0 +1,584 @@
+/* =============================================
+   GLOBAL STYLES
+   ============================================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #f0f4f8;
+  color: #1a202c;
+}
+
+/* =============================================
+   NAVBAR
+   ============================================= */
+.navbar {
+  background: #1e3a8a;
+  color: white;
+  padding: 0 20px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-icon {
+  font-size: 24px;
+}
+
+.navbar-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.logout-btn {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 6px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.logout-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* =============================================
+   APP LAYOUT
+   ============================================= */
+.app-container {
+  min-height: 100vh;
+}
+
+.page-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+/* =============================================
+   LOGIN PAGE
+   ============================================= */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1e3a8a, #6d28d9);
+}
+
+.login-card {
+  background: white;
+  padding: 36px 32px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.login-icon {
+  font-size: 40px;
+}
+
+.login-header h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 8px;
+  color: #1e3a8a;
+}
+
+.login-header p {
+  color: #64748b;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.login-input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.login-input:focus {
+  border-color: #1e3a8a;
+}
+
+.password-wrapper {
+  position: relative;
+  margin-bottom: 14px;
+}
+
+.password-wrapper .login-input {
+  margin-bottom: 0;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: #64748b;
+  cursor: pointer;
+}
+
+.role-selector {
+  margin-bottom: 16px;
+}
+
+.role-selector label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.role-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.role-btn {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.role-btn.active {
+  border-color: #1e3a8a;
+  background: #eff6ff;
+  color: #1e3a8a;
+}
+
+.login-error {
+  color: #ef4444;
+  font-size: 13px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 13px;
+  background: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.login-btn:hover {
+  background: #1e40af;
+}
+
+.login-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =============================================
+   HOME PAGE - ROUTE CARDS
+   ============================================= */
+.home-page {
+  padding: 8px 0;
+}
+
+.home-header {
+  margin-bottom: 24px;
+}
+
+.home-header h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1e3a8a;
+}
+
+.home-header p {
+  color: #64748b;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.routes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.route-card {
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1.5px solid transparent;
+}
+
+.route-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-color: #1e3a8a;
+}
+
+.route-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.route-bus-icon {
+  font-size: 28px;
+}
+
+.route-card-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1e3a8a;
+}
+
+.route-source,
+.route-stops {
+  font-size: 13px;
+  color: #475569;
+  margin-bottom: 6px;
+}
+
+.route-landmarks-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 12px 0;
+}
+
+.landmark-chip {
+  background: #eff6ff;
+  color: #1e40af;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 20px;
+  border: 1px solid #bfdbfe;
+}
+
+.landmark-chip.more {
+  background: #f1f5f9;
+  color: #64748b;
+  border-color: #e2e8f0;
+}
+
+.track-btn {
+  width: 100%;
+  padding: 10px;
+  background: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s;
+}
+
+.track-btn:hover {
+  background: #1e40af;
+}
+
+/* =============================================
+   ROUTE DETAIL PAGE
+   ============================================= */
+.route-detail {
+  padding: 8px 0;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: #1e3a8a;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.back-btn:hover {
+  text-decoration: underline;
+}
+
+.route-detail-header h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1e3a8a;
+}
+
+.route-detail-source {
+  color: #64748b;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.live-status {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 16px 0;
+  padding: 12px 16px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+}
+
+.live-badge {
+  font-size: 14px;
+  font-weight: 600;
+  color: #16a34a;
+}
+
+.offline-badge {
+  font-size: 14px;
+  font-weight: 600;
+  color: #dc2626;
+}
+
+.last-updated {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.landmarks-section {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+}
+
+.landmarks-section h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #1e3a8a;
+}
+
+.landmarks-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.landmark-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.landmark-dot {
+  width: 28px;
+  height: 28px;
+  background: #1e3a8a;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.landmark-name {
+  font-size: 14px;
+  color: #334155;
+}
+
+.map-section {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+}
+
+.map-section h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #1e3a8a;
+}
+
+/* Leaflet bus emoji marker */
+.bus-marker-icon {
+  font-size: 26px;
+  background: none;
+  border: none;
+}
+
+/* =============================================
+   DRIVER DASHBOARD
+   ============================================= */
+.driver-dashboard {
+  background: white;
+  border-radius: 16px;
+  padding: 28px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.driver-dashboard h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 4px;
+}
+
+.driver-subtitle {
+  color: #64748b;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.driver-section {
+  margin-bottom: 20px;
+}
+
+.driver-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.route-select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  background: white;
+  cursor: pointer;
+}
+
+.route-select:disabled {
+  background: #f8fafc;
+  cursor: not-allowed;
+}
+
+.driver-route-info {
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  color: #475569;
+}
+
+.driver-route-info p {
+  margin-bottom: 6px;
+}
+
+.driver-landmarks {
+  margin-top: 10px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.driver-landmarks li {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.driver-buttons {
+  margin-bottom: 16px;
+}
+
+.start-btn {
+  width: 100%;
+  padding: 14px;
+  background: #16a34a;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.start-btn:hover {
+  background: #15803d;
+}
+
+.stop-btn {
+  width: 100%;
+  padding: 14px;
+  background: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.stop-btn:hover {
+  background: #b91c1c;
+}
+
+.driver-status {
+  font-size: 14px;
+  color: #475569;
+  text-align: center;
+  padding: 10px;
+  background: #f8fafc;
+  border-radius: 8px;
+}
